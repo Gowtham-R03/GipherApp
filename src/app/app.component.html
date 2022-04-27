@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #77c9d4;">
+<div class="container-fluid">
+    <a class="navbar-brand" href="#">GIPHER</a>
+    <button class="navbar-toggler" type="button"  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+        <a class="nav-link active" routerLink="/trending" routerLinkActive="active" >TRENDING</a>
+        </li>
+          <li>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                CATEGORIES
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                <li><a class="dropdown-item" routerLink="/favorite" routerLinkActive="active">FAVORITE</a></li>
+                <li><a class="dropdown-item" routerLink="/my-recommendations" routerLinkActive="active">RECOMMENDATION</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+              USER
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+              <li><a class="dropdown-item" routerLink="/profile" routerLinkActive="active">PROFILE</a></li>
+              <li><a class="dropdown-item" (click)="onLogOut()">LOGOUT</a></li>
+            </ul>
+          </div>
+        </li>
+    </ul>
+    <form class="d-flex">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" #gif>
+        <!-- <button type="button" id="btn-search" class="btn btn-info" (click)="search(gif.value)">Search</button> -->
+        <button id="btn-search" class="btn btn-outline-dark my-2 my-sm-0" type="button" (click)="search(gif.value)">Search</button>
+        <button *ngIf="div1" [disabled]="!div1" type="button" (click)="onCancle()" id="btn-cancle" class="btn btn-outline-dark my-2 my-sm-0">Cancle</button>
+    </form>
+    <button type="button" class="btn btn-outline-success" (click)="logIn()">LogIn</button>
+    </div>
+</div>
+</nav>
+
+<div *ngIf="div1">
+    <app-search [parentData]= "parentName">
+    </app-search>
+</div>
+
+<router-outlet ></router-outlet>

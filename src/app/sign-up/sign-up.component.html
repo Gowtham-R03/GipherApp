@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Signup</h1>
+                    <h6>Register Here</h6>
+                </div>
+                    <form #myForm="ngForm" (ngSubmit)="onSignUp(myForm)" >
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">User Id</label>
+                            <input  [(ngModel)]="user.userId" #userId="ngModel" required [class.is-invalid]="userId.invalid && userId.touched" type="name" class="form-control" id="userId" name="userId" aria-describedby="emailHelp">
+                            <small [class.d-none]="userId.valid || userId.untouched" class="text-danger">UserId is required*</small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">User Name</label>
+                            <input  [(ngModel)]="user.userName" #userName="ngModel" required [class.is-invalid]="userName.invalid && userName.touched" type="name" class="form-control" id="userName" name="userName" aria-describedby="emailHelp">
+                            <small [class.d-none]="userName.valid || userName.untouched" class="text-danger">User Name is required*</small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">First Name</label>
+                            <input  [(ngModel)]="user.firstName" #firstName="ngModel" required [class.is-invalid]="firstName.invalid && firstName.touched" type="name" class="form-control" id="firstName" name="firstName" aria-describedby="emailHelp">
+                            <small [class.d-none]="firstName.valid || firstName.untouched" class="text-danger">First Name is required*</small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Last Name</label>
+                            <input  [(ngModel)]="user.lastName" #lastName="ngModel" required [class.is-invalid]="lastName.invalid && lastName.touched" type="name" class="form-control" id="lastName" name="lastName" aria-describedby="emailHelp">
+                            <small [class.d-none]="lastName.valid || lastName.untouched" class="text-danger">Last Name is required*</small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Mobile Number</label>
+                            <input  [(ngModel)]="user.phnNumber" #phone="ngModel" required pattern="^\d{10}$" type="tel" class="form-control" id="phnNumber" name="phnNumber" aria-describedby="emailHelp">
+                            <div *ngIf="phone.errors && (phone.invalid || phone.untouched)">
+                                <small class="text-danger" *ngIf="phone.errors['required']">Phone number is required</small>
+                                <small class="text-danger" *ngIf="phone.errors['pattern']">phone number should be 10 digit</small>
+                              </div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Email address</label>
+                          <input  [(ngModel)]="user.email" #email="ngModel" required type="email" [class.is-invalid]="email.invalid && email.touched " class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                          <small [class.d-none]="email.valid || email.untouched" class="text-danger">Email is required*</small>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input  [(ngModel)]="user.password" #password="ngModel" required [class.is-invalid]="password.invalid && password.touched" type="password" class="form-control" id="password1" name="password">
+                          <small [class.d-none]="password.valid || password.untouched" class="text-danger">Password is required*</small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label" >Upload Your Profile Image</label>
+                            <input [(ngModel)]="user.picName" class="form-control" #image="ngModel" required  [class.is-invalid]="image.invalid && image.touched" (change)="onFileChanged($event)" type="file" id="formFile">
+                            <small [class.d-none]="image.valid || image.untouched" class="text-danger">Image is required*</small>
+                        </div>
+                        <button [disabled]="myForm.form.invalid" type="submit" class="btn btn-outline-success">SignUp</button>
+                    </form>
+                    <a style="margin-top: 10px; margin-bottom: 10px; margin-left: 10px;" routerLink="/log-in" routerLinkActive="active" >Already a user? Click to login</a>
+            </div>
+        </div>
+    </div>
+</div>

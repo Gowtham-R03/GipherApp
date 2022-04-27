@@ -1,0 +1,51 @@
+<h1>COMMENT SECTION</h1>
+<br>
+<h3>{{title}}</h3>
+<hr>
+<div class="card-deck">
+    <div class="card border-secondary mb-3" style="background-color: #f8eee7;">
+      <img id="gifImage" [src]="gif.images.downsized.url"  alt="wallpaper">
+      <div class="card-body">
+        <!-- <h5 class="card-title">{{Card title}}</h5> -->
+        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>  -->
+        <button type="button"  class="btn btn-outline-secondary" id="btn-unrecommendedd">Recommended</button>
+        <button type="button" class="btn btn-outline-secondary">Favorite</button>
+        <!-- <img id="commentIcon" src="assets/icons8-comment-24.png" alt="commentIcon" (click)="myFunction()"/> -->
+      </div> 
+    </div>
+</div>
+<hr>
+<h4>Comment</h4>
+<div class="mat-container">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+              Comment Here
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+            <form class="example-form">
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Leave a comment</mat-label>
+                  <textarea matInput id="commentInput" placeholder="text" name="text" [(ngModel)]="note.text"></textarea>
+                </mat-form-field>
+            </form>
+        <button mat-raised-button color="primary" (click)="addNote()">Done</button>          
+      </mat-expansion-panel>
+    </mat-accordion>
+</div>
+<hr>
+<h4>Comments</h4>
+<div class="noteslist" *ngFor="let note of notes">
+    <mat-card class="matCard">
+        <mat-card-subtitle>{{note.text}}</mat-card-subtitle>
+        <mat-card-actions>
+            <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon" [ngClass]="{'liked':isLiked}" (click)="likeTheButton(note)">
+              <mat-icon>favorite</mat-icon>
+            </button>
+          <button (click)="onDelete(note)" mat-raised-button color="warn">Delete</button>
+        </mat-card-actions>
+        <span class="like-counter">Like Count : {{ likeCount }}</span>
+      </mat-card>
+</div>
+

@@ -1,0 +1,49 @@
+.d-flex{
+    padding-right: 800px;
+}
+
+/* .btn{
+    margin-left: 10px;
+} */
+
+#updateButton{
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+#btn-unrecommendedd{
+   margin-right: 10px;
+}
+
+#gifImage{
+    max-width: 286px;
+    max-height: 180px;
+}
+
+.card{
+    margin-top: 50px;
+    max-width: 286px;
+    max-height: 250px;
+}
+
+.card-deck{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+h2{
+    margin-top: 30px;
+    font-size: 50px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+#commentIcon{
+    margin-left: 35px;
+}
+
+.my-pagination .ngx-pagination .current {
+    background: #0e92eb;
+  }

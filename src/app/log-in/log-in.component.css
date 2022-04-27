@@ -1,0 +1,22 @@
+.card{
+    margin-top:80px;
+    margin-left: 300px;
+    border: none;
+    width: 700px;
+    padding: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #f8eee7;
+}
+
+h1{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+h6{
+    font-size: large;
+    margin-bottom: 20px;
+    
+}

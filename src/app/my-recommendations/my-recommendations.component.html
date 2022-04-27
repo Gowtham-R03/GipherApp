@@ -1,0 +1,15 @@
+<h2>RECOMMENDATION</h2>
+<button type="button" (click)="onRecommended()" id="updateButton" class="btn btn-outline-secondary">Update</button>
+<div class="card-deck">
+  <div class="card border-secondary mb-3" *ngFor="let gif of gifs | paginate: { itemsPerPage: 12, currentPage: page, totalItems:totalLength}" style="background-color: #f8eee7;">
+    <img id="gifImage" [src]="gif.images.downsized.url"  alt="wallpaper">
+    <div class="card-body">
+       <!-- <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>  -->
+      <button type="button" (click)="onUnrecommended(gif)" class="btn btn-outline-secondary" id="btn-unrecommendedd">Unrecommended</button>
+      <button type="button" id="commentIcon" class="btn btn-outline-secondary" (click)="myFunction(gif)"><img id="commentImg" src="assets/icons8-comment-24.png" alt="commentIcon"></button>  
+    </div> 
+  </div>
+</div>
+
+<pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>

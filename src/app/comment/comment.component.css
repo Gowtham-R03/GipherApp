@@ -1,0 +1,48 @@
+h1{
+    margin-top: 30px;
+    margin-left: 10px;
+    font-size: 40px;
+    font-weight: 900px;
+}
+h3{
+    margin-left: 10px;
+}
+h4{
+    margin-left: 10px;
+}
+
+#gifImage{
+    max-width: 310px;
+    max-height: 180px;
+}
+
+.card{
+    margin-top: 50px;
+    max-width: 310px;
+    max-height: 250px;
+}
+
+.card-deck{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-left: 768px;
+}
+
+#btn-unrecommendedd{
+    margin-right: 50px;
+ }
+
+.mat-container{
+    margin-left: 10px;
+    margin-right: 500px;
+}
+
+.noteslist{
+    margin-left: 10px;
+    margin-right: 500px;
+
+}
+
+.matCard{
+    margin-bottom: 20px;
+}

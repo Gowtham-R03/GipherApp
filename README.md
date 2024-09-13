@@ -1,5 +1,10 @@
 # GipherApp
 
+ Developed a GIF-based web application using Angular,
+ Spring Boot, and MySQL. It fetches GIFs from giphy.com, allowing
+ authenticated users to favorite, recommend, like, and comment on
+ GIFs.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
 ## Development server
